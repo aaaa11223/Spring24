@@ -133,11 +133,11 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">　카 테 고 리　</a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">도시락/샌드위치</a></li>
-                        <li><a class="dropdown-item" href="#">라면/면류</a></li>
-                        <li><a class="dropdown-item" href="#">유제품</a></li>
-                        <li><a class="dropdown-item" href="#">음료</a></li>
-                        <li><a class="dropdown-item" href="#">스낵</a></li>
+                        <li><a class="dropdown-item" href="${contextPath}/category/sandwich.do">도시락/샌드위치</a></li>
+                        <li><a class="dropdown-item" href="${contextPath}/category/noodle.do">라면/면류</a></li>
+                        <li><a class="dropdown-item" href="${contextPath}/category/dairy.do">유제품</a></li>
+                        <li><a class="dropdown-item" href="${contextPath}/category/drink.do">음료</a></li>
+                        <li><a class="dropdown-item" href="${contextPath}/category/snack.do">스낵</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="#">생활잡화</a></li>
                     </ul>
