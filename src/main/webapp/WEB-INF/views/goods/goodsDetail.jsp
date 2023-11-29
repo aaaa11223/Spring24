@@ -1,46 +1,64 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8" 	isELIgnored="false"%>
+    pageEncoding="utf-8" isELIgnored="false" %>
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>    
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> 
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<c:set var="contextPath"  value="${pageContext.request.contextPath}"  />
-<c:set var="goods"  value="${goodsMap.goodsVO}"  />
-<c:set var="imageList"  value="${goodsMap.imageList }"  />
+
+<c:set var="contextPath" value="${pageContext.request.contextPath}" />
+<c:set var="goods" value="${goodsMap.goodsVO}" />
+<c:set var="imageList" value="${goodsMap.imageList }" />
+
  <%
      //치환 변수 선언합니다.
       //pageContext.setAttribute("crcn", "\r\n"); //개행문자
       pageContext.setAttribute("crcn" , "\n"); //Ajax로 변경 시 개행 문자 
       pageContext.setAttribute("br", "<br/>"); //br 태그
-%>  
+%>
+
 <html>
 <head>
-<style>
-#layer {
-	z-index: 2;
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	width: 100%;
-}
+<!--__________________________________________________________________________________________[↓ CSS 링크 ]-->
+<link href="${contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
+<link href="${contextPath}/resources/css/main.css" rel="stylesheet">
 
-#popup {
-	z-index: 3;
-	position: fixed;
-	text-align: center;
-	left: 50%;
-	top: 45%;
-	width: 300px;
-	height: 200px;
-	background-color: #ccffff;
-	border: 3px solid #87cb42;
-}
+<!--__________________________________________________________________________________________[↓ 폰트 링크 ]-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@600&family=Orbit&display=swap" rel="stylesheet">
 
-#close {
-	z-index: 4;
-	float: right;
-}
-</style>
+	<style>
+		#layer {
+			z-index: 2;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			width: 100%;
+		}
+		
+		#popup {
+			z-index: 3;
+			position: fixed;
+			text-align: center;
+			left: 50%;
+			top: 45%;
+			width: 300px;
+			height: 200px;
+			background-color: #ccffff;
+			border: 3px solid #87cb42;
+		}
+
+		#close {
+		z-index: 4;
+		float: right;
+		}
+	</style>
+
+<!--__________________________________________________________________________________________[↓ JavaScript ]-->
+<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+ integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+ crossorigin="anonymous"></script>
+ 
 <script type="text/javascript">
 	function add_cart(goods_id) {
 		$.ajax({
@@ -130,6 +148,7 @@ function fn_order_each_goods(goods_id,goods_title,goods_sales_price,fileName){
 	}	
 </script>
 </head>
+
 <body>
 	<hgroup>
 		<h1>컴퓨터와 인터넷</h1>

@@ -25,7 +25,7 @@
 		 if(fileName != null && fileName != undefined){
 			 obj.submit();
 		 }else{
-			 alert("메인 이미지는 반드시 첨부해야 합니다.2023-11-29 13:01 test");
+			 alert("메인 이미지는 반드시 첨부해야 합니다.");
 			 return;
 		 }
 		 

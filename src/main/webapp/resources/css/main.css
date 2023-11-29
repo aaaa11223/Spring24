@@ -13,9 +13,11 @@
 }
 body {
 	background-position: top; margin: 0px; padding: 0px; color: rgb(102, 102, 102); font-family: "Dotum", Arial,serif; font-size: 1em; background-image: url("../imgs/body_back.gif"); background-repeat: repeat-x; background-color: rgb(255, 255, 255);
+	overflow-y: scroll;
 }
 img {
 	border: currentColor; border-image: none;
+	border-radius: 10px;
 }
 a {
 	color: rgb(102, 102, 102); text-decoration: none;
@@ -65,6 +67,38 @@ header #search .btn1 {
 aside {
 	width: 205px; float: left;
 }
+.custom-nav {
+	position: absolute;
+	display: flex;
+	right: 1vw;
+}
+nav .navbar-brand {
+	margin-left: 10vw;
+}
+nav .active {
+	position:relative;
+	display:flex;
+	top: -0.3vh;
+	width: 40px;
+	margin-left: -1vw;
+}
+nav .dropdown-toggle,
+.dropdown-toggle::after {
+	position:relative;
+	display:flex;
+	top: 1vh;
+}
+/*
+.dropdown-toggle::after {
+	border-left: none;
+}*/
+nav .dropdown-toggle {
+	margin-left: 2.5vw;
+	border-left: 1px solid rgba(0,0,0,0.3);
+}
+nav .input-group {
+	margin-left: 48.5vw;
+}
 /* nav {
  	margin: 25px 0px 0px 10px; font-family: "NanumGothic", Serif; font-size: 0.8em;
 }
@@ -106,7 +140,7 @@ aside #banner {
 }
 article {
 /* 	margin: 20px 0px 0px 15px; width: 80vw; float: left; */
-	margin: 0px 0px 0px 0px; width: 80vw; float: left;
+	margin: 1vh 4vw 1vh 4vw; width: 92vw; float: left;
 }
 
 .link {
