@@ -139,7 +139,7 @@
                         <li><a class="dropdown-item" href="${contextPath}/category/drink.do">음료</a></li>
                         <li><a class="dropdown-item" href="${contextPath}/category/snack.do">스낵</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">생활잡화</a></li>
+                        <li><a class="dropdown-item" href="${contextPath}/category/etc.do">생활잡화</a></li>
                     </ul>
                 </li>
             </ul>
