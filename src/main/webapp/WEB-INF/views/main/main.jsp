@@ -34,7 +34,7 @@
 <div class="main_book">
 	<c:set var="goods_count" value="0" />
 	<h3>베스트셀러</h3>
-	<c:forEach var="item" items="${goodsMap.bestseller }">
+	<c:forEach var="item" items="${goodsMap.drink }">
 		<c:set var="goods_count" value="${goods_count+1 }" />
 		<div class="book">
 			<a

@@ -21,13 +21,25 @@ public class GoodsServiceImpl implements GoodsService{
 	
 	public Map<String,List<GoodsVO>> listGoods() throws Exception {
 		Map<String,List<GoodsVO>> goodsMap=new HashMap<String,List<GoodsVO>>();
-		List<GoodsVO> goodsList=goodsDAO.selectGoodsList("bestseller");
-		goodsMap.put("bestseller",goodsList);
-		goodsList=goodsDAO.selectGoodsList("newbook");
-		goodsMap.put("newbook",goodsList);
 		
-		goodsList=goodsDAO.selectGoodsList("steadyseller");
-		goodsMap.put("steadyseller",goodsList);
+		List<GoodsVO> goodsList=goodsDAO.selectGoodsList("drink");
+		goodsMap.put("drink",goodsList);
+		
+		goodsList=goodsDAO.selectGoodsList("snack");
+		goodsMap.put("snack",goodsList);
+		
+		goodsList=goodsDAO.selectGoodsList("noodle");
+		goodsMap.put("noodle",goodsList);
+		
+		goodsList=goodsDAO.selectGoodsList("dairy");
+		goodsMap.put("dairy",goodsList);
+		
+		goodsList=goodsDAO.selectGoodsList("sandwich");
+		goodsMap.put("sandwich",goodsList);
+		
+		goodsList=goodsDAO.selectGoodsList("etc");
+		goodsMap.put("etc",goodsList);
+		
 		return goodsMap;
 	}
 	
