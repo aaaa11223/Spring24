@@ -11,17 +11,17 @@ import org.springframework.stereotype.Service;
 import com.bookshop01.goods.dao.GoodsDAO;
 import com.bookshop01.goods.vo.GoodsVO;
 
-@Service
-public class CategoryService {
-	@Autowired
-	private GoodsDAO goodsDAO;
 
-	public Map<String,List<GoodsVO>> getDrinkPage() throws Exception {
-		Map<String,List<GoodsVO>> goodsMap=new HashMap<String,List<GoodsVO>>();
-		List<GoodsVO> goodsList=goodsDAO.selectGoodsList("bestseller");
-		goodsMap.put("bestseller",goodsList);
-		return goodsMap;
-	}
+public interface CategoryService {
+
+	public Map<String,List<GoodsVO>> categoryList() throws Exception;
+//	public Map<String,List<GoodsVO>> getDrinkPage() throws Exception;
+//	public Map<String,List<GoodsVO>> getDairyPage() throws Exception;
+//	public Map<String,List<GoodsVO>> getEtcPage() throws Exception;
+//	public Map<String,List<GoodsVO>> getNoodlePage() throws Exception;
+//	public Map<String,List<GoodsVO>> getSnackPage() throws Exception;
+//	public Map<String,List<GoodsVO>> getSandwichPage() throws Exception;
+	
 
 	
 }

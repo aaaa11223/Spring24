@@ -17,7 +17,7 @@
 			value="/WEB-INF/views/common/quickMenu.jsp" />
 	</definition>
 <!--카테고리 경로지정 -->
-	<definition name="/category/drink" extends="baseLayout">
+<!-- 	<definition name="/category/drink" extends="baseLayout">
 		<put-attribute name="title" value="음료카테고리페이지" />
 		<put-attribute name="body"
 			value="/WEB-INF/views/category/drink.jsp" />
@@ -47,7 +47,18 @@
 		<put-attribute name="body"
 			value="/WEB-INF/views/category/etc.jsp" />
 	</definition>
-
+ -->
+ 
+ <!-- selectGoodsList 추가 -->
+      <definition name="/goods/selectGoodsList" extends="baseLayout">
+         <put-attribute name="title" value="전체 상품 페이지" />
+         <put-attribute name="body" value="/WEB-INF/views/category/snack.jsp" />
+      </definition>
+      
+      <definition name="/goods/selectGoodsList" extends="baseLayout">
+         <put-attribute name="title" value="전체 상품 페이지" />
+         <put-attribute name="body" value="/WEB-INF/views/category/drink.jsp" />
+      </definition>
 </tiles-definitions>
 
 

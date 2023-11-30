@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
+ <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"	isELIgnored="false"
 	%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -9,7 +9,7 @@
 %>  
 <div class="main_book">
    <c:set  var="goods_count" value="0" />
-	<h3>생수/커피/주스</h3>
+	<h3>전체 상품 페이지</h3>
 	<c:forEach var="item" items="${goodsMap.bestseller}">
 	   <c:set  var="goods_count" value="${goods_count+1 }" />
 		<div class="book">
