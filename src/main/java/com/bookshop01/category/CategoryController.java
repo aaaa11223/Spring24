@@ -14,13 +14,27 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.bookshop01.goods.vo.GoodsVO;
 
-public interface CategoryController {
-//
-//	public ModelAndView showDrinkPage(HttpServletRequest request, HttpServletResponse response) throws Exception;
-//	public ModelAndView showDairyPage(HttpServletRequest request, HttpServletResponse response) throws Exception;
-//	public ModelAndView showEtcPage(HttpServletRequest request, HttpServletResponse response) throws Exception;
-//	public ModelAndView showNoodlePage(HttpServletRequest request, HttpServletResponse response) throws Exception;
-//	public ModelAndView showSnackPage(HttpServletRequest request, HttpServletResponse response) throws Exception;
-//	public ModelAndView showSandwichPage(HttpServletRequest request, HttpServletResponse response) throws Exception;
+@Controller("categoryController")
+@RequestMapping(value="/category")
+public class CategoryController{
+
+	@Autowired
+	private CategoryService categoryService;
+	
+	@RequestMapping("/drink.do")
+	public ModelAndView showDrinkPage(HttpServletRequest request, HttpServletResponse response) throws Exception {
+	    String viewName = (String) request.getAttribute("viewName");
+	    HttpSession session = request.getSession();
+	    
+	    // goodsService에서 bestseller 상품들을 가져옴
+	    Map<String, List<GoodsVO>> goodsMap = categoryService.getDrinkPage();  
+	    
+	    ModelAndView mav = new ModelAndView(viewName);
+	    mav.addObject("goodsMap", goodsMap);
+	    return mav;
+	
+//		return "/category/drink";
+	}
+
 
 }
