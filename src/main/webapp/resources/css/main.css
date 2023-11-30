@@ -2,7 +2,6 @@
 	font-family: NanumGothic;
 	src: local("?"), url(../imgs/nanum.woff) format("woff"), url(../imgs/nanum.ttf) format("truetype");
 } */
-
 @font-face {
 	font-family: 'Noto Sans KR', sans-serif;
 	/* src: local("?"), url(../imgs/nanum.woff) format("woff"), url(../imgs/nanum.ttf) format("truetype"); */
@@ -17,8 +16,9 @@ body {
 }
 img {
 	border: currentColor; border-image: none;
-	border-radius: 10px;
+	border-radius: 20px;
 }
+
 a {
 	color: rgb(102, 102, 102); text-decoration: none;
 }
@@ -97,7 +97,8 @@ nav .dropdown-toggle {
 	border-left: 1px solid rgba(0,0,0,0.3);
 }
 nav .input-group {
-	margin-left: 48.5vw;
+/* 	margin-left: 48.5vw; */
+left: -36vw;
 }
 /* nav {
  	margin: 25px 0px 0px 10px; font-family: "NanumGothic", Serif; font-size: 0.8em;
@@ -130,7 +131,7 @@ aside #banner {
 	margin: 20px 0px 15px 15px; font-size: 0.75em;
 }
 #notice h2 {
-	background-position: left; padding: 2px 0px 5px 10px; color: rgb(51, 102, 153); font-family: "NanumGothic"; font-size: 1.2em; border-bottom-color: rgb(51, 102, 153); border-bottom-width: 1px; border-bottom-style: solid; background-image: url("../imgs/notice_h2.gif"); background-repeat: no-repeat;
+	background-position: left; padding: 2px 0px 5px 10px; color: rgb(51, 102, 153); font-size: 1.2em; border-bottom-color: rgb(51, 102, 153); border-bottom-width: 1px; border-bottom-style: solid; background-image: url("../imgs/notice_h2.gif"); background-repeat: no-repeat;
 }
 #notice ul {
 	list-style: none; margin: 10px 0px 0px;
@@ -157,7 +158,7 @@ article hgroup {
 	margin: 10px 0px;
 }
 article h1 {
-	padding: 0px 0px 5px; letter-spacing: 2px; font-family: "NanumGothic"; font-size: 1.1em; border-bottom-color: rgb(102, 102, 102); border-bottom-width: 2px; border-bottom-style: solid;
+	padding: 1vh 0 0 0; letter-spacing: 2px; font-size: 1.1em; border-top-color: rgb(180 30 34); border-top-width: 1vh; border-top-style: double;
 }
 article h2 {
 	padding-top: 5px; font-size: 0.75em; font-weight: normal;
@@ -303,13 +304,14 @@ article ul#page_control li .page_contrl_active {
 	background: rgb(255, 255, 255); border: 1px solid rgb(255, 0, 0); border-image: none; color: rgb(255, 0, 0);
 }
 article h3 {
-	margin: 5px 0px;
+	margin-top: 1vh;
+	margin-left: 34vw;
 }
 article h4 {
-	margin: 5px 0px;
+	margin-left: 67vw;
 }
 article h3 {
-	color: rgb(0, 153, 255); font-size: 1em;
+	color: rgba(0, 0, 0, 0.8); font-size: 4em; font-weight: 800;
 }
 article h4 {
 	font-size: 0.8em; font-weight: normal;
@@ -327,10 +329,10 @@ article h4 {
 	padding: 0px 30px 0px 0px; width: auto; text-align: center;
 }
 #goods_image figure img {
-	border: 1px solid rgb(255, 255, 255); border-image: none; width: 150px; height: auto; box-shadow: 2px 2px 25px #666;
+	border: 10px solid rgb(180, 30, 34); border-image: none; width: 400px; height: auto; margin-left: 10vw; /* box-shadow: 2px 2px 25px #666; */
 }
 #detail_table {
-	width: 590px; font-size: 0.75em; float: left;
+	width: 800px; font-size: 0.75em; float: right; margin-right: 17vw;
 }
 #detail_table table {
 	width: 95%; border-top-color: rgb(51, 51, 51); border-bottom-color: rgb(51, 51, 51); border-top-width: 2px; border-bottom-width: 1px; border-top-style: solid; border-bottom-style: solid; border-collapse: collapse;
@@ -346,7 +348,7 @@ article h4 {
 	border-bottom-color: rgb(102, 102, 102); border-bottom-width: 1px; border-bottom-style: solid;
 }
 #detail_table table td span {
-	font-family: "NanumGothic", Serif; font-size: 1.2em; font-weight: bold;
+	font-size: 1.2em; font-weight: bold;
 }
 #detail_table table td.fixed {
 	width: 110px; font-weight: bold;font-size: 0.8em;
@@ -363,7 +365,7 @@ article h4 {
 	padding: 0px 10px; float: left;
 }
 #detail_table ul li a {
-	border-radius: 5px; border: 2px solid rgb(153, 153, 153); border-image: none; width: 150px; height: 25px; text-align: center; padding-top: 7px; font-family: "NanumGothic", Serif; font-size: 1.2em; font-weight: bold; display: block;
+	border-radius: 5px; border: 2px solid rgb(153, 153, 153); border-image: none; width: 150px; height: 25px; text-align: center; padding-top: 7px; font-size: 1.2em; font-weight: bold; display: block;
 }
 #detail_table ul li a.buy {
 	background-position: 15px; background-repeat: no-repeat;
@@ -420,7 +422,7 @@ ul.tabs li.active a:hover {
 	padding: 10px 10px 20px; line-height: 1.8em; font-size: 0.75em; min-height: 400px;
 }
 .tab_content h4 {
-	background-position: left top; margin: 10px 0px; padding: 20px 0px 5px 35px; height: 30px; color: rgb(255, 255, 255); letter-spacing: 4px; font-family: "NanumGothic", Serif; font-size: 16px; font-weight: bold; background-image: url("../imgs/h4_back.png"); background-repeat: no-repeat;
+	background-position: left top; margin: 10px 0px; padding: 20px 0px 5px 35px; height: 30px; color: rgb(255, 255, 255); letter-spacing: 4px; font-size: 16px; font-weight: bold; background-image: url("../imgs/h4_back.png"); background-repeat: no-repeat;
 }
 .tab_content p {
 	margin: 10px 0px 0px;
@@ -438,7 +440,7 @@ footer ul {
 	list-style: none; margin: 0px 0px 0px 210px;
 }
 footer ul li {
-	background-position: right; font-family: "NanumGothic", Serif; float: left; background-image: url("../imgs/foot_line.gif"); background-repeat: no-repeat;
+	background-position: right; float: left; background-image: url("../imgs/foot_line.gif"); background-repeat: no-repeat;
 }
 footer ul li.no_line {
 	background-image: none;
@@ -549,7 +551,7 @@ footer img {
 	border-bottom-color: rgb(102, 102, 102); border-bottom-width: 1px; border-bottom-style: solid;
 }
 .detail_table table td span {
-	font-family: "NanumGothic", Serif; font-size: 1.2em; font-weight: bold;
+	font-size: 1.2em; font-weight: bold;
 }
 
 .detail_table table td.fixed {
@@ -569,7 +571,7 @@ footer img {
 	padding: 0px 10px; float: left;
 }
 .detail_table ul li a {
-	border-radius: 5px; border: 2px solid rgb(153, 153, 153); border-image: none; width: 150px; height: 25px; text-align: center; padding-top: 7px; font-family: "NanumGothic", Serif; font-size: 1.2em; font-weight: bold; display: block;
+	border-radius: 5px; border: 2px solid rgb(153, 153, 153); border-image: none; width: 150px; height: 25px; text-align: center; padding-top: 7px; font-size: 1.2em; font-weight: bold; display: block;
 }
 .detail_table ul li a.buy {
 	background-position: 15px; background-repeat: no-repeat;
@@ -600,7 +602,7 @@ footer img {
 }
 
 article h1_TITLE {
-	padding: 0px 0px 5px; letter-spacing: 2px; font-family: "NanumGothic"; font-size: 1.1em; border-bottom-color: rgb(102, 102, 102); border-bottom-width: 2px;
+	padding: 0px 0px 5px; letter-spacing: 2px; font-size: 1.1em; border-bottom-color: rgb(102, 102, 102); border-bottom-width: 2px;
 }
 
 
@@ -608,7 +610,7 @@ article h1_TITLE {
 	width: auto; padding-top: 7px; font-size: 0.75em;
 }
 .main_book h3 {
-	margin: 0px 0px 5px; padding: 0px 0px 5px; color: rgb(51, 102, 153); text-transform: uppercase; font-family: "NanumGothic", Serif; font-size: 1.2em; border-bottom-color: rgb(51, 102, 153); border-bottom-width: 1px; border-bottom-style: solid;
+	margin: 0px 0px 5px; padding: 0px 0px 5px; color: rgb(51, 102, 153); text-transform: uppercase; font-size: 1.2em; border-bottom-color: rgb(51, 102, 153); border-bottom-width: 1px; border-bottom-style: solid;
 }
 
 .main_book .book {
