@@ -5,18 +5,25 @@
 
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 
-
+<!--**********************************************************************************************************************************-->
 <head>
-<!--__________________________________________________________________________________________[↓ CSS 링크 ]-->
+<!--____________________________________________________________________________________________________[ CSS ]-->
+<!--──────────────────────────────────────────────────[↓ 부트스트랩/기본 ]-->
 	<link href="${contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
 	<link href="${contextPath}/resources/css/main.css" rel="stylesheet">
-
-<!--__________________________________________________________________________________________[↓ 폰트 링크 ]-->
+<!--──────────────────────────────────────────────────[↓ 구글 폰트 ]-->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@600&family=Orbit&display=swap" rel="stylesheet">
-
-<!--__________________________________________________________________________________________[↓ JavaScript ]-->
+	
+	<style>
+		nav img {
+			border-radius: 0px;
+		}
+	</style>
+	
+<!--____________________________________________________________________________________________________[ JavaScript ]-->
+<!--──────────────────────────────────────────────────[↓ 부트스트랩 ]-->
 	<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
 	 integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
 	 crossorigin="anonymous"></script>
@@ -86,7 +93,7 @@
 	</script>
 </head>
 
-
+<!--**********************************************************************************************************************************-->
 <body>
 <%-- 	<div id="logo">
 		<a href="${contextPath}/main/main.do"> <img width="176"
@@ -94,8 +101,7 @@
 			src="${contextPath}/resources/image/Booktopia_Logo.jpg">
 		</a>
 	</div> --%>
-	
-<!--__________________________________________________________________________________________[↓ 최상단 메뉴 ]-->
+<!--____________________________________________________________________________________________________[ 최상단 메뉴 ]-->
 	<div id="head_link">
 		<ul>
 			<c:choose>
@@ -121,11 +127,11 @@
 
 	<br>
 
-<!--__________________________________________________________________________________________[↓ 검색창 메뉴 ]-->
+<!--____________________________________________________________________________________________________[ 검색창 메뉴 ]-->
 				<!-- 스낵-snack 면류-noodle 유제품-dairy 음료-drink 도시락/샌드위치-sandwich 생활잡화-etc -->
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-        
+<!--──────────────────────────────────────────────────[↓ 로고 ]-->
         <a class="navbar-brand" href="${contextPath}/main/main.do"><img src="${contextPath}/resources/image/Spring24_logo.png"></a>
         
         <button class="navbar-toggler" type="button"
@@ -137,7 +143,9 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+<!--──────────────────────────────────────────────────[↓ 홈 버튼 ]-->
                 <li class="nav-item"><a class="nav-link active" aria-current="page" href="${contextPath}/main/main.do"><img src="${contextPath}/resources/image/Spring24_home.png"></a></li>
+<!--──────────────────────────────────────────────────[↓ 드롭다운 카테고리 ]-->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">　카 테 고 리　</a>
                     <ul class="dropdown-menu">
@@ -151,7 +159,7 @@
                     </ul>
                 </li>
             </ul>
-            
+<!--──────────────────────────────────────────────────[↓ 검색창 ]-->
             <form class="d-flex" role="search" name="frmSearch" action="${contextPath}/goods/searchGoods.do">
                 <div class="input-group">
                     <input class="form-control" name="searchWord" type="search" onKeyUp="keywordSearch()" placeholder="검색할 내용을 입력해주세요" aria-label="Search">

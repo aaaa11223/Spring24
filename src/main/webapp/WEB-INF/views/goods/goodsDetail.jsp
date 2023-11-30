@@ -16,13 +16,14 @@
       pageContext.setAttribute("br", "<br/>"); //br 태그
 %>
 
+<!--**********************************************************************************************************************************-->
 <html>
 <head>
-<!--__________________________________________________________________________________________[↓ CSS 링크 ]-->
+<!--____________________________________________________________________________________________________[ CSS ]-->
+<!--──────────────────────────────────────────────────[↓ 부트스트랩/기본 ]-->
 <link href="${contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
 <link href="${contextPath}/resources/css/main.css" rel="stylesheet">
-
-<!--__________________________________________________________________________________________[↓ 폰트 링크 ]-->
+<!--──────────────────────────────────────────────────[↓ 구글 폰트 ]-->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@600&family=Orbit&display=swap" rel="stylesheet">
@@ -54,7 +55,8 @@
 		}
 	</style>
 
-<!--__________________________________________________________________________________________[↓ JavaScript ]-->
+<!--____________________________________________________________________________________________________[ JavaScript ]-->
+<!--──────────────────────────────────────────────────[↓ 부트스트랩 ]-->
 <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
  integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
  crossorigin="anonymous"></script>
@@ -67,17 +69,15 @@
 			url : "${contextPath}/cart/addGoodsInCart.do",
 			data : {
 				goods_id:goods_id
-				
 			},
 			success : function(data, textStatus) {
 				//alert(data);
 			//	$('#message').append(data);
-				if(data.trim()=='add_success'){
+				if(data.trim()=='add_success') {
 					imagePopup('open', '.layer01');	
-				}else if(data.trim()=='already_existed'){
+				} else if(data.trim()=='already_existed'){
 					alert("이미 카트에 등록된 상품입니다.");	
 				}
-				
 			},
 			error : function(data, textStatus) {
 				alert("에러가 발생했습니다."+data);
@@ -92,30 +92,23 @@
 		if (type == 'open') {
 			// 팝업창을 연다.
 			jQuery('#layer').attr('style', 'visibility:visible');
-
 			// 페이지를 가리기위한 레이어 영역의 높이를 페이지 전체의 높이와 같게 한다.
 			jQuery('#layer').height(jQuery(document).height());
 		}
-
 		else if (type == 'close') {
-
 			// 팝업창을 닫는다.
 			jQuery('#layer').attr('style', 'visibility:hidden');
 		}
 	}
-	
+
 function fn_order_each_goods(goods_id,goods_title,goods_sales_price,fileName){
 	var _isLogOn=document.getElementById("isLogOn");
 	var isLogOn=_isLogOn.value;
-	
-	 if(isLogOn=="false" || isLogOn=='' ){
+	if(isLogOn=="false" || isLogOn=='' ) {
 		alert("로그인 후 주문이 가능합니다!!!");
-	} 
-	
-	
+	}
 		var total_price,final_total_price;
 		var order_goods_qty=document.getElementById("order_goods_qty");
-		
 		var formObj=document.createElement("form");
 		var i_goods_id = document.createElement("input"); 
     var i_goods_title = document.createElement("input");
@@ -149,13 +142,15 @@ function fn_order_each_goods(goods_id,goods_title,goods_sales_price,fileName){
 </script>
 </head>
 
+<!--**********************************************************************************************************************************-->
 <body>
 	<hgroup>
-		<h1>컴퓨터와 인터넷</h1>
-		<h2>국내외 도서 &gt; 컴퓨터와 인터넷 &gt; 웹 개발</h2>
+		<h1>&#62;&#62;카테고리명</h1>
+<!-- 		<h2>국내외 도서 &gt; 컴퓨터와 인터넷 &gt; 웹 개발</h2> -->
 		<h3>${goods.goods_title }</h3>
-		<h4>${goods.goods_writer} &nbsp; 저| ${goods.goods_publisher}</h4>
+		<h4>${goods.goods_writer} &nbsp; ${goods.goods_publisher}</h4>
 	</hgroup>
+	
 	<div id="goods_image">
 		<figure>
 			<img alt="HTML5 &amp; CSS3"
@@ -240,20 +235,19 @@ function fn_order_each_goods(goods_id,goods_title,goods_sales_price,fileName){
 	<!-- 내용 들어 가는 곳 -->
 	<div id="container">
 		<ul class="tabs">
-			<li><a href="#tab1">책소개</a></li>
-			<li><a href="#tab2">저자소개</a></li>
+			<li><a href="#tab1">상품소개</a></li>
+<!-- 		<li><a href="#tab2">저자소개</a></li>
 			<li><a href="#tab3">책목차</a></li>
 			<li><a href="#tab4">출판사서평</a></li>
 			<li><a href="#tab5">추천사</a></li>
-			<li><a href="#tab6">리뷰</a></li>
+			<li><a href="#tab6">리뷰</a></li>-->
 		</ul>
 		<div class="tab_container">
 			<div class="tab_content" id="tab1">
 				<h4>책소개</h4>
 				<p>${fn:replace(goods.goods_intro,crcn,br)}</p>
 				<c:forEach var="image" items="${imageList }">
-					<img 
-						src="${contextPath}/download.do?goods_id=${goods.goods_id}&fileName=${image.fileName}">
+					<img src="${contextPath}/download.do?goods_id=${goods.goods_id}&fileName=${image.fileName}">
 				</c:forEach>
 			</div>
 			<div class="tab_content" id="tab2">
@@ -290,7 +284,7 @@ function fn_order_each_goods(goods_id,goods_title,goods_sales_price,fileName){
 			</a> <br /> <font size="12" id="contents">장바구니에 담았습니다.</font><br>
 <form   action='${contextPath}/cart/myCartList.do'  >				
 		<input  type="submit" value="장바구니 보기">
-</form>			
+</form>	
 </body>
 </html>
 <input type="hidden" name="isLogOn" id="isLogOn" value="${isLogOn}"/>
